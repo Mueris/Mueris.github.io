@@ -1,0 +1,75 @@
+/* Bul Bakalım / Musseray Games sitesi. Renkler oyun simgesinden (parşömen zemin, kırmızı mühür, lacivert kurdele). */
+:root {
+  --paper: #f3e8cf;
+  --paper-2: #fbf5e7;
+  --ink: #2e2014;
+  --muted: #6a5539;
+  --seal: #8e1f19;
+  --ribbon: #4434a6;
+  --rule: rgba(142, 31, 25, 0.22);
+  --chip: rgba(68, 52, 166, 0.09);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #18110b;
+    --paper-2: #22180f;
+    --ink: #f0e4ca;
+    --muted: #c3ac88;
+    --seal: #f19a86;
+    --ribbon: #aea6ff;
+    --rule: rgba(241, 154, 134, 0.24);
+    --chip: rgba(174, 166, 255, 0.12);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 1.75rem 1.25rem 3.5rem; }
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding-bottom: 1rem; border-bottom: 3px double var(--rule);
+}
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+.brand img { width: 46px; height: 46px; border-radius: 11px; display: block; }
+.brand b { display: block; font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif; font-size: 1.2rem; color: var(--seal); line-height: 1.2; }
+.brand small { display: block; color: var(--muted); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; }
+nav.lang { display: flex; gap: 0.5rem; }
+nav.lang a {
+  padding: 0.3rem 0.8rem; border: 1px solid var(--rule); border-radius: 999px;
+  text-decoration: none; color: var(--ink); font-size: 0.9rem;
+}
+nav.lang a[aria-current="page"] { background: var(--chip); border-color: var(--ribbon); }
+
+h1, h2 { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif; color: var(--seal); line-height: 1.25; text-wrap: balance; }
+h1 { font-size: clamp(1.7rem, 5vw, 2.25rem); margin: 1.6rem 0 0.35rem; }
+h2 { font-size: 1.22rem; margin: 2.3rem 0 0.6rem; }
+.meta { color: var(--muted); font-size: 0.93rem; margin: 0 0 1.6rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--ribbon); text-underline-offset: 2px; }
+strong { color: var(--ink); }
+.mail { font-weight: 700; overflow-wrap: anywhere; }
+.box { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 1rem 1.15rem; margin: 1.2rem 0; }
+.box p:last-child { margin-bottom: 0; }
+
+.links { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 1.4rem 0 1.6rem; }
+.links a {
+  display: block; padding: 0.95rem 1.05rem; border: 1px solid var(--rule); border-radius: 12px;
+  background: var(--paper-2); text-decoration: none; color: var(--ink);
+}
+.links a:hover { border-color: var(--ribbon); }
+.links a b { display: block; color: var(--seal); font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif; font-size: 1.05rem; }
+.links a span { color: var(--muted); font-size: 0.92rem; }
+
+footer {
+  margin-top: 3rem; padding-top: 1rem; border-top: 3px double var(--rule);
+  color: var(--muted); font-size: 0.88rem; display: flex; gap: 0.5rem 1.25rem; flex-wrap: wrap; justify-content: space-between;
+}
+footer a { color: var(--muted); }
